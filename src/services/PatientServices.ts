@@ -1,11 +1,15 @@
 // library imports
 import axios from "axios"
 
-export const getPatientsData = () => {
+// local imports
+import { ApiCredentials } from "../common/Interfaces"
+
+export const getPatientsData = (credentials: ApiCredentials) => {
     try {
+        const { username, password } = credentials
         return axios.get('https://fedskillstest.coalitiontechnologies.workers.dev', {
             headers: {
-                Authorization: `Basic ${btoa("coalition:skills-test")}`
+                Authorization: `Basic ${btoa(`${username}:${password}`)}`
             }
         })
     } catch (error) {

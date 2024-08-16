@@ -6,6 +6,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-top: 3rem;
 .styled-button {
     padding: 0.75rem 2.25rem;
     border-radius: 2.625rem;

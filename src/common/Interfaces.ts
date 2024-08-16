@@ -91,3 +91,8 @@ export interface InfoCardData {
 export interface IDiagnosisInfoCard {
     info: InfoCardData
 }
+
+export interface ApiCredentials {
+    username: string;
+    password: string
+}

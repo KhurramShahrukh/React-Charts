@@ -11,6 +11,8 @@ import PatientDetails from './patient-details/PatientDetails';
 import { AppDispatch } from '../../redux-toolkit/Store';
 import { getPatientsData } from '../../services/PatientServices';
 import { setPatientsData } from '../../redux-toolkit/PatientsSlice';
+import { ApiCredentials } from '../../common/Interfaces';
+import { PASSWORD, USERNAME } from '../../common/Constants';
 
 const Patients: React.FC = () => {
     const history = useHistory();
@@ -18,7 +20,8 @@ const Patients: React.FC = () => {
 
     const apiCall = async () => {
         try {
-            const { data } = await getPatientsData()
+            const apiPayload: ApiCredentials = { username: USERNAME, password: PASSWORD }
+            const { data } = await getPatientsData(apiPayload)
             dispatch(setPatientsData(data))
         } catch (error) {
             history.push('/error');
