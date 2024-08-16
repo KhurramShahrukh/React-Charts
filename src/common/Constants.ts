@@ -1,0 +1,2 @@
+export const ACTIVE_STATE_COLOR = "#01F0D0"
+export const ACTIVE_STATE_SECONDARY_COLOR = "#D8FCF7"
